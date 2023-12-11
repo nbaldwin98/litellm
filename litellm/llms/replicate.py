@@ -178,6 +178,7 @@ def model_to_version_id(model):
         return split_model[1]
     return model
 
+
 # Main function for prediction completion
 def completion(
     model: str,
@@ -232,7 +233,8 @@ def completion(
     if system_prompt is not None:
         input_data = {
             "prompt": prompt,
-            "system_prompt": system_prompt
+            "system_prompt": system_prompt,
+            **optional_params
         }
     # Otherwise, use the prompt as is
     else:
